@@ -1,9 +1,6 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://nx7iyio57tjy"]
-
-[ext_resource type="Texture2D" uid="uid://dmh2p1ely0eul" path="res://Assets/Terrain/TerrainSheet.png" id="1_iw28y"]
+[gd_resource type="TileSet" load_steps=2 format=3 uid="uid://nx7iyio57tjy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_50pdt"]
-texture = ExtResource("1_iw28y")
 separation = Vector2i(2, 0)
 texture_region_size = Vector2i(120, 142)
 use_texture_padding = false

@@ -1,12 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://bp88a1pwxbs82"]
+[gd_scene load_steps=4 format=3 uid="uid://bp88a1pwxbs82"]
 
-[ext_resource type="TileSet" uid="uid://nx7iyio57tjy" path="res://Scenes/Tiles.tres" id="1_bqyd2"]
+[ext_resource type="Script" uid="uid://d0gfesrb0t28l" path="res://Scripts/CharacterMovement.cs" id="1_bqyd2"]
+[ext_resource type="Texture2D" uid="uid://c3ow1k2tceoib" path="res://Assets/snake.png" id="2_50pdt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_50pdt"]
+radius = 21.587
 
 [node name="Game" type="Node2D"]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-animation = &""
+[node name="Enemy Prefab" type="AnimatedSprite2D" parent="."]
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray(0, 0, 255, 255, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0)
-tile_set = ExtResource("1_bqyd2")
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(187, 91)
+script = ExtResource("1_bqyd2")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+scale = Vector2(0.242188, 0.187285)
+texture = ExtResource("2_50pdt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CircleShape2D_50pdt")
